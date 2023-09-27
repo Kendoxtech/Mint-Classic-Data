@@ -34,7 +34,7 @@ POSSIBLE BUSINESS SOLUTIONS
 -Specify warehouse for orders
 
 
- SORTING IN-PROCESS ORDERS
+SORTING IN-PROCESS ORDERS
 Sorting orders in process of shipment and creating a table to sustain it is and should be the first solution to 
 reducing inventory by allocating them to specific warehouse for processing and equally assigning a manager
 to oversee the process. I created a table called 
@@ -46,7 +46,8 @@ This was achieved by the query below;
                FROM mintclassics.inventories
                WHERE status = 'In process'
 
-        SORTING SHIPPED ORDERS
+
+SORTING SHIPPED ORDERS
 Sorting shipped orders is another important step we have to take in order to manage our shipped inventory by assining a
 manager to oversee the process. This is crucial to managing the orders that has left our inventory. These items information
 can be stored in warehouse code 'b' and warehouse name 'East'. This was achieved by the query below;
@@ -57,7 +58,7 @@ can be stored in warehouse code 'b' and warehouse name 'East'. This was achieved
               WHERE status = 'shipped'
 
 
-      SORTING CANCELLED ORDERS
+SORTING CANCELLED ORDERS
 To further break down the inventory, I collated all cancelled orders and kept them in a table named 'cancelledorders'
 and also assinged an employee to oversee development happening around there. These orders can be stored in warehouse
 code 'a' and warehouse name 'North'. This was achieved by the query below;
@@ -68,8 +69,7 @@ code 'a' and warehouse name 'North'. This was achieved by the query below;
               WHERE status = 'cancelled'
 
 
-
-    SORTING ORDERS ON HOLD
+SORTING ORDERS ON HOLD
 To get a clearer view of the inventory, it is essential to separate orders that are on hold and assign and employee
 to oversee any development that might occur. These orders can be stored in warehouse code 'b' and warehouse name
 'East'. This was achieved by the query below
@@ -78,8 +78,10 @@ to oversee any development that might occur. These orders can be stored in wareh
              SELECT distinct * 
              FROM mintclassics.inventories
              WHERE status = 'On Hold'
+             
+             
 
-   SORTING RESOLVED ORDERS
+SORTING RESOLVED ORDERS
 Sorting orders that has passed the vetting system can make it easier to processed and reduce the inventory. These 
 orders can be stored in warehouse code 'c' and warehouse name 'West'. This was achieved by the query below;
 
